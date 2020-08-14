@@ -19,6 +19,7 @@ let iconCon2 = document.querySelector("#iconCon2");
 let shuffle = document.querySelector("#shuffleAnimation");
 let textResult = document.querySelector("#result");
 let winnersList = document.querySelector("#winnersList");
+let draw = false;
 
 btnStart.addEventListener('click', e => {
     e.preventDefault();
@@ -43,9 +44,7 @@ btnStart.addEventListener('click', e => {
     cPlayer1.innerHTML = cP1;
     cPlayer2.innerHTML = cP2;
 
-
     playMatch();
-
 
     function playMatch(){
         pickHand(() => {
@@ -56,9 +55,15 @@ btnStart.addEventListener('click', e => {
     
     function diplayResult(){
         let winner = getResult();
-        winners.push(winner);
+        
+        if(!winner){
+            winner = "Draw, play again!";
+            draw = true;
+        } else{
+            winners.push(winner);
+            updateWinnerList();
+        } 
 
-        updateWinnerList()
         textResult.innerHTML = `<h4> ${winner} Won</h4>`;
         textResult.style.display = "block";
     }
@@ -77,6 +82,12 @@ btnStart.addEventListener('click', e => {
     function repeat(){
         textResult.style.display = "none";
         
+        if(draw){
+            draw = false;
+            playMatch();
+            return;
+        }
+
         if(arrCopy.length < 2){
             if(arrCopy.length) winners.push(arrCopy[0]);
             arrCopy = winners;
@@ -126,10 +137,10 @@ function pickHand(callback){
         let h1 = hand[Math.floor(Math.random() *3)];
         let h2 = hand[Math.floor(Math.random() *3)]
         
-        while(h1 == h2){
-            h1 = hand[Math.floor(Math.random() *3)];
-            h2 = hand[Math.floor(Math.random() *3)];
-        }
+        // while(h1 == h2){
+        //     h1 = hand[Math.floor(Math.random() *3)];
+        //     h2 = hand[Math.floor(Math.random() *3)];
+        // }
 
         cPlayer1.dataset.hand = h1;
         cPlayer2.dataset.hand = h2;
@@ -158,6 +169,8 @@ handAnimation.innerHTML =
 function getResult(){
     let hands =  [cPlayer1.dataset.hand, cPlayer2.dataset.hand]
     let winner = result[hands[0] + hands[1]];
+
+    if(!winner) return false;
 
     if(hands.indexOf(winner)) {
         eliminate(cPlayer1.innerHTML)
