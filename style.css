@@ -1,0 +1,54 @@
+.matchPanel{
+	height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+
+.currentPlayers{
+	margin-top: 5rem;
+	font-size: large;
+}
+
+
+.rockPaperScissor{
+	margin-top: 5rem;
+}
+
+.rockPaperScissor img{
+	font-size: 10rem;
+}
+
+.rockPaperScissor i {
+	line-height: 6rem;
+}
+
+
+#shuffleAnimation{
+	display: inline-block;
+	height: 96px;
+	overflow: hidden;
+}
+
+#shuffleAnimation img{
+	display: block;
+	transform: translateY(0);
+	/* transform: translateY(-280px); */
+}
+
+
+.spinner{
+	animation: ty .5s infinite linear;
+}
+
+@keyframes ty{
+	from{transform: translateY(0)}	
+	to{transform: translateY(-280px);}
+}
+
+.eliminated{
+	border-bottom-color: red !important;
+    background: #ff0000bd !important;
+    box-shadow: none !important;
+    border-radius: 5px !important;
+}

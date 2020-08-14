@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="container-fluid" style="max-width: 100%;">
+        <div class="row" style="height: 100vh">
+            <div class="col s2" style="height: 100%">
+               
+                <form action="" id ="players">
+             
+                        <div class="input-field col s6">
+                            <input id="P1" type="text" class="validate">
+                            <label for="P1">Player1</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P2" type="text" class="validate">
+                            <label for="P2">Player2</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P3" type="text" class="validate">
+                            <label for="P3">Player3</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P4" type="text" class="validate">
+                            <label for="P4">Player4</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P5" type="text" class="validate">
+                            <label for="P5">Player5</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P6" type="text" class="validate">
+                            <label for="P6">Player6</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P7" type="text" class="validate">
+                            <label for="P7">Player7</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P8" type="text" class="validate">
+                            <label for="P8">Player8</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P9" type="text" class="validate">
+                            <label for="P9">Player9</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P10" type="text" class="validate">
+                            <label for="P10">Player10</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P11" type="text" class="validate">
+                            <label for="P11">Player11</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P12" type="text" class="validate">
+                            <label for="P12">Player12</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P13" type="text" class="validate">
+                            <label for="P13">Player13</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P14" type="text" class="validate">
+                            <label for="P14">Player14</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P15" type="text" class="validate">
+                            <label for="P15">Player15</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="P16" type="text" class="validate">
+                            <label for="P16">Player16</label>
+                        </div>
+
+                        <div class="row center-align" style="margin-top: 2rem; display: block;">
+                            <a class="waves-effect waves-light btn-small" id="reset">Reset</a>                
+                        </div>
+                </form>
+          
+            </div>
+
+            <div class="col s8 matchPanel">
+                <div class="row center-align" style="margin-top: 2rem;">
+                    <a class="waves-effect waves-light btn-large" id="start">Start</a>                
+                </div>
+                <div class="row center-align currentPlayers">
+                    <div class="col s4">
+                        <h3 id="cPlayer1">Current Player 1</h3>
+                    </div>
+                    <div class="col s4">
+                    </div>
+                    <div class="col s4">
+                        <h3 id="cPlayer2">Current Player2</h3>
+                    </div>
+                </div>
+
+                <div class="row center-align rockPaperScissor">
+                    <div class="col s4" id="iconCon1">
+                        <img id="icon1" src="https://img.icons8.com/color/96/000000/hand-rock.png"/>
+                    </div>
+                    <div class="col s4">
+                        <i class="medium material-icons" style="color: crimson">clear</i>
+                    </div>
+                    <div class="col s4" id="iconCon2">
+                        <img id="icon2" src="https://img.icons8.com/color/96/000000/hand-scissors.png"/>
+                    </div>
+                </div>
+
+                <div class="row center-align"  style="margin-top: 2rem; color:green; display: none;" id="result">
+                    
+                </div>
+
+            </div>
+
+            <div class="col s2" style="margin-top: 4rem;">
+            <ul class="collection with-header" id="winnersList">
+                <li class="collection-header"><h5>Winners</h5></li>
+            </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
