@@ -1,7 +1,7 @@
 let icons = {
-    R:"https://img.icons8.com/color/96/000000/hand-rock.png",
-    P: "https://img.icons8.com/color/96/000000/hand.png",
-    S: "https://img.icons8.com/color/96/000000/hand-scissors.png"
+    R:"./rock.png",
+    P: "./paper.png",
+    S: "./scissors.png"
 }
 
 let btnStart = document.querySelector("#start");
@@ -26,9 +26,11 @@ btnStart.addEventListener('click', e => {
     btnStart.disabled = true;
     arrPlayers = [];
     Array.from(players).forEach(ele => {
-        ele.disabled =  true;
-        ele.classList.remove("eliminated");
-        if(ele.value) arrPlayers.push(ele.value)
+		ele.classList.remove("eliminated");
+        if(ele.value){
+			ele.disabled =  true;
+			arrPlayers.push(ele.value)
+		} 
     })
 
     if(!arrPlayers.length) {
@@ -158,10 +160,10 @@ function pickHand(callback){
 var handAnimation = document.createElement('div');
 handAnimation.id = "shuffleAnimation";
 handAnimation.innerHTML = 
-`<img id="icon1" class="spinner" src="https://img.icons8.com/color/96/000000/hand-rock.png"/>
-<img id="icon2" class="spinner" src="https://img.icons8.com/color/96/000000/hand-scissors.png"/>
-<img id="icon2" class="spinner" src="https://img.icons8.com/color/96/000000/hand.png"/>
-<img id="icon1" class="spinner" src="https://img.icons8.com/color/96/000000/hand-rock.png"/>
+`<img id="icon1" class="spinner" src="./rock.png" />
+<img id="icon2" class="spinner" src="./scissors.png" />
+<img id="icon2" class="spinner" src="./paper.png" />
+<img id="icon1" class="spinner" src="./rock.png" />
 `
 
 

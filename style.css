@@ -26,7 +26,7 @@
 
 #shuffleAnimation{
 	display: inline-block;
-	height: 96px;
+	height: 180px;
 	overflow: hidden;
 }
 
@@ -38,12 +38,12 @@
 
 
 .spinner{
-	animation: ty .5s infinite linear;
+	animation: ty 1s infinite linear;
 }
 
 @keyframes ty{
 	from{transform: translateY(0)}	
-	to{transform: translateY(-280px);}
+	to{transform: translateY(-600px);}
 }
 
 .eliminated{
